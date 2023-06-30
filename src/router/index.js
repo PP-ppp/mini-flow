@@ -6,6 +6,10 @@ const router = createRouter({
         {
             path: '/',
             component: () => import('../components/MiniFlow')
+        },
+        {
+            path: '/test',
+            component: () => import('../components/testMyu')
         }
     ],
 })
