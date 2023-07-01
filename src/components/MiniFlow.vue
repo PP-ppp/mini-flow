@@ -63,5 +63,8 @@ async function init() {
 	right: 0;
 	top: 0;
 	width: 300px;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
 }
 </style>
