@@ -10,11 +10,12 @@
   "dependencies": {
     "bpmn-js": "^13.2.0",
     "bpmn-js-properties-panel": "^2.1.0",
+    "camunda-bpmn-js": "2.7.0",
+    "@bpmn-io/properties-panel": "2.2.1",
     "bpmn-moddle": "^8.0.1",
     "cnpm": "^9.2.0",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
