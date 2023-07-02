@@ -5,7 +5,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: () => import('../components/MiniFlow')
+            component: () => import('../components/MiniFlow.vue')
         }
     ],
 })

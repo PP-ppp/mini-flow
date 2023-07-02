@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang ="ts">
 // 引入相关的依赖
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 import {
@@ -15,20 +15,17 @@ import {
 // import camundaModdle from 'camunda-bpmn-moddle/resources/camunda.json';
 import { xmlStr } from '../mock/xmlStr'
 import { onMounted, ref } from 'vue'
-const canvas = ref(null)
+// type RefType = HTMLInputElement | null;
+const canvas = ref<HTMLElement | null>(null);
 const properties = ref(null)
-const container = ref(null)
 onMounted(() => {
   init()
 })
 async function init() {
-  console.log('init');
   // 获取到属性ref为“canvas”的dom节点
-  console.log(canvas.value);
-  console.log(properties.value);
   // 建模
   const viewer = new BpmnModeler({
-    container: canvas.value,
+    container: canvas?.value instanceof HTMLElement ? canvas.value : undefined,
     // camunda: camundaModdle,
     propertiesPanel: {
       parent: properties.value
@@ -58,11 +55,12 @@ async function init() {
   width: 100%;
   height: 100%;
 }
-.panel{
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 300px;
+
+.panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
   height: 100%;
   background-color: white;
   z-index: 9999;
